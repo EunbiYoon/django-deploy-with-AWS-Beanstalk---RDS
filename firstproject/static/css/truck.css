@@ -1,0 +1,444 @@
+/* visitor_base.html */
+.truck{
+    z-index:1;
+    position: relative;
+    padding:0
+  }
+  .truck::before{
+    content:"";
+    background-size: cover;
+    background-image: url('../../static/image/Gate2Edit.PNG');
+    filter:blur(6px);
+    position:fixed;
+    z-index:-1;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+  }
+.truck nav{
+    background-color: white;
+    border-bottom:5px solid #70635E;
+  }
+  
+  /* truck_home.html */
+  .content{
+    margin:100px auto;
+  }
+  .content p {
+    font-size:40px;
+    font-weight: 700;
+    border-right: .15em solid #70635E;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: white;
+    color:#70635E;
+  }
+  
+  .content p a{
+    color:#A72B2A;
+  }
+  
+  .content p:nth-child(1) {
+    width: 26em;
+    -webkit-animation: type 3s steps(40, end);
+    animation: type 3s steps(40, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  .content p:nth-child(2) {
+    width: 24em;
+    opacity: 0;
+    -webkit-animation: type2 3s steps(40, end);
+    animation: type2 3s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  .content p:nth-child(3) {
+    width: 24em;
+    opacity: 0;
+    -webkit-animation: type2 3s steps(40, end);
+    animation: type2 3s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 6s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    background-color: transparent !important;
+    color:transparent !important;
+  }
+  .content p:nth-child(4) {
+    width: 7.5em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(40, end);
+    animation: type3 3s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 9s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    border-right: .15em solid #A72B2A;
+  }
+  .content p:nth-child(5) {
+    width: 8.4em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(40, end);
+    animation: type3 3s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 12s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    border-right: .15em solid #A72B2A;
+  }
+  .content p:nth-child(6) {
+    width: 7.7em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(40, end);
+    animation: type3 3s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 15s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    border-right: .15em solid #A72B2A;
+  }
+  
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid #70635E;
+    }
+    100% {
+      border: none;
+    }
+  }
+  @-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid #70635E;
+    }
+    100% {
+      border: none;
+    }
+  }
+  @keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid #70635E;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  @-webkit-keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid #70635E;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  @keyframes type3 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      border-right: .15em solid #A72B2A;
+    }
+  }
+  @-webkit-keyframes type3 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      border-right: .15em solid #A72B2A;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  @-webkit-keyframes blink {
+    50% {
+      border-color: tranparent;
+    }
+  }
+  
+  
+  /* checkin.html */
+  .checkin{
+    margin-top:50px;
+    border:5px solid #70635E;
+    background-color: aliceblue;
+    text-align: center;
+    padding:30px;
+  }
+  .checkin h1{
+    color:#464133;
+  }
+  .checkin h5{
+    color:grey;
+  }
+  .checkin .section{
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:10px 0px;
+    padding:10px 150px;
+  }
+  .checkin label{
+    margin:auto 0;
+    padding:auto 0;
+    background-color: #464133;
+    color:whitesmoke;
+    padding:.375rem .75rem;
+    font-weight: 700;
+    border:2px solid #464133;
+    text-align: center;
+  }
+  .checkin input, select, option{
+    text-align: center;
+    background-color:white;
+    border:2px solid #464133;
+    font-weight: 700;
+  }
+  .checkin .admin, .checkin .time{
+    background-color: #ffa3a371;
+    color:#464133;
+    padding:.375rem .75rem;
+    border:2px solid #464133;
+  }
+  .checkin input::placeholder{
+    color:#4641335b
+  }
+  .checkin .title1{
+    grid-row:1;
+    grid-column:1;
+  }
+  .checkin .time{
+    grid-row:1;
+    grid-column:2;
+  
+  }
+  .checkin .title2{
+    grid-row:2;
+    grid-column:1;
+  }
+  .checkin .admin{
+    grid-row:2;
+    grid-column:2;
+  }
+  .checkin .title3{
+    grid-row:3;
+    grid-column:1;
+  }
+  .checkin .drivername{
+    grid-row:3;
+    grid-column:2;
+  }
+  
+  .checkin button{
+    background-color:#A72B2A;
+    border:none;
+    font-weight: 700;
+    color:white;
+    border:2px solid #464133;
+  }
+  .checkin button:hover{
+    background-color: #ffa3a371;
+    color:#A72B2A;
+    border:2px solid #A72B2A;
+  }
+  
+  
+  
+  
+  /* checkout.html */
+  .checkout{
+    margin-top:50px;
+    border:5px solid #70635E;
+    background-color: aliceblue;
+    text-align: center;
+    padding:30px;
+  }
+  .checkout h1{
+    color:#464133;
+  }
+  .checkout h5{
+    color:grey;
+  }
+  .checkout .section{
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:10px 0px;
+    padding:10px 150px;
+  }
+  .checkout .admin, .checkin .time{
+    background-color: #ffa3a371;
+    color:#464133;
+    padding:.375rem .75rem;
+    border:2px solid #464133;
+  }
+  .checkout label{
+    margin:auto 0;
+    padding:auto 0;
+    background-color: #464133;
+    color:whitesmoke;
+    padding:.375rem .75rem;
+    font-weight: 700;
+    border:2px solid #464133;
+    text-align: center;
+  }
+  .checkout input, select, option{
+    text-align: center;
+    background-color:white;
+    border:2px solid #464133;
+    font-weight: 700;
+  }
+  .checkout input::placeholder{
+    color:#4641335b
+  }
+  .checkout .title1{
+    grid-row:1;
+    grid-column:1;
+  }
+  .checkout .time{
+    grid-row:1;
+    grid-column:2;
+    background-color: #ffa3a371;
+    color:#464133;
+    padding:.375rem .75rem;
+    border:2px solid #464133;
+  }
+  .checkout .title2{
+    grid-row:2;
+    grid-column:1;
+  }
+  .checkout .admin{
+    grid-row:2;
+    grid-column:2;
+  }
+  .checkout .title3{
+    grid-row:3;
+    grid-column:1;
+  }
+  .checkout .trucknumber{
+    grid-row:3;
+    grid-column:2;
+  }
+  .checkout .title4{
+    grid-row:4;
+    grid-column:1;
+  }
+  .checkout .outtrailer{
+    grid-row:4;
+    grid-column:2;
+  }
+  .checkout .title5{
+    grid-row:5;
+    grid-column:1;
+  }
+  .checkout .load{
+    grid-row:5;
+    grid-column:2;
+  }
+  .checkout button{
+    background-color:#A72B2A;
+    border:none;
+    font-weight: 700;
+    color:white;
+    border:2px solid #464133;
+  }
+  .checkout button:hover{
+    background-color: #ffa3a371;
+    color:#A72B2A;
+    border:2px solid #A72B2A;
+  }
+  
+  
+  /* history.html */
+  .history {
+    width:100%;
+    margin:auto;
+    font-size: 0.8rem;
+    overflow-y:auto;
+  }
+  .history input{
+    margin-bottom:1%;
+    border:3px dashed #4641337e;
+    font-size:2rem;
+    color:#464133;
+    font-weight: 600;
+    background-color:white;
+    text-align: center;
+  }
+  .history input::placeholder{
+    color:#464133;
+  }
+  .history table{
+    background-color: white;
+  }
+  .history table, .history tr, .history th, .history td{
+    border:2px solid #4641337e;
+    border-collapse: collapse;
+    padding:10px;
+    margin:auto;
+  }
+  .history table th{
+    background-color: #a72a2a31;
+    color:#A72B2A;
+    text-align: center;
+    font-weight: 800;
+  }
+  .history table{
+    text-align: center;
+    align-items: center;
+  }
+  
+  .history table td a, .history td button{
+    background-color:#286060;
+    border: 2px solid #286060;
+    color:white !important;
+    border-radius:5px;
+    font-weight:600;
+    font-size:1rem;
+    text-decoration: none !important;
+  }
+  .history td a:hover, .history td button:hover{
+    background-color:white;
+    color: #464133 !important;;
+    border: 2px solid grey;
+  }
+  .history .copyTracking{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none !important;
+  }
+  

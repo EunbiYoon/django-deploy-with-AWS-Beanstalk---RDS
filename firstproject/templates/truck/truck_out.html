@@ -1,0 +1,31 @@
+{% extends 'truck/truck_base.html' %}
+
+{% block container %}
+    <div class="checkout">
+        <h1>Truck Check-Out Registration</h1>
+        <h5>Choose the parking lot and car plate number.</h5>
+        <form method="post" action="{% url 'Ttruckout_url' %}">
+            {% csrf_token %}
+            <div class="section">
+                <label class="title1">Check-Out Time</label>
+                <label class="time" id="current-time"></label>
+                <label class="title2">Check In Manager</label>
+                <label class="admin">{{user.username}}</label>
+                <label class="title3">Truck Number</label>
+                <input class="trucknumber" name="trucknumber"></input>
+                <label class="title4">Out Trailer Number/Bobtail</label>
+                <input type="text" class="outtrailer" name="outtrailer" placeholder="ABCD1234567">
+                <label class="title5">Loading Status</label>
+                <select class="load" name="load">
+                    <option value="empty">Empty</option>
+                    <option value="bobtail">Bobtail</option>
+                    <option value="full">Full</option>
+                </select>
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    {% load static %}
+    <script src="{% static 'js/current_time.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,647 @@
+/* parking_base.html */
+.parking{
+    z-index:1;
+    position: relative;
+    padding:0;
+    height: 100%;
+}
+.parking::before{
+    content:"";
+    background-size: cover;
+    background-image: url('../../static/image/MainLot1.jpg');
+    filter:blur(3px);
+    position:fixed;
+    z-index:-1;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+}
+nav{
+background-color: #000A52;
+border-bottom:2px solid #000A52;
+}
+nav form a{
+color:white;
+margin:0 20px 0 30px; 
+border:1px solid white; 
+border-radius: 5px; padding:5px
+}
+nav h5{
+color:white; 
+margin:0
+}
+/* parking_home.html */
+.content{
+    margin: 60px auto;
+}
+.content p {
+    font-size:40px;
+    font-weight: 700;
+    border-right: .15em solid #000a52;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color:aliceblue;
+    color:#000a52;
+}
+
+.content p a{
+    color:#c0aa00;
+}
+
+.content p:nth-child(1) {
+    width: 29.5em;
+    -webkit-animation: type 3s steps(40, end);
+    animation: type 3s steps(40, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content p:nth-child(2) {
+    width: 20em;
+    opacity: 0;
+    -webkit-animation: type2 3s steps(40, end);
+    animation: type2 3s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content p:nth-child(3) {
+    width: 24.5em;
+    opacity: 0;
+    -webkit-animation: type2 3s steps(40, end);
+    animation: type2 3s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 6s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    background-color: transparent !important;
+    color:transparent !important;
+}
+.content p:nth-child(4) {
+    width: 10.2em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(40, end);
+    animation: type3 3s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 9s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    border-right: .15em solid #c0aa00;
+}
+.content p:nth-child(5) {
+    width: 8.8em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(40, end);
+    animation: type3 3s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 12s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    border-right: .15em solid #c0aa00;
+}
+.content p:nth-child(6) {
+    width: 14.2em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(40, end);
+    animation: type3 2s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 15s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    border-right: .15em solid #c0aa00;
+}
+.content p:nth-child(7) {
+    width: 11.4em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(40, end);
+    animation: type3 2s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 18s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    border-right: .15em solid #c0aa00;
+}
+.content p:nth-child(8) {
+    width: 16em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(40, end);
+    animation: type3 2s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 21s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    border-right: .15em solid #c0aa00;
+}
+.content p:nth-child(9) {
+    width: 13.2em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(40, end);
+    animation: type3 2s steps(40, end);
+    -webkit-animation-delay: 3s;
+    animation-delay: 24s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    border-right: .15em solid #c0aa00;
+}
+@keyframes type {
+    0% {
+    width: 0;
+    }
+    99.9% {
+    border-right: .15em solid #64717C;
+    }
+    100% {
+    border: none;
+    }
+}
+@-webkit-keyframes type {
+    0% {
+    width: 0;
+    }
+    99.9% {
+    border-right: .15em solid #64717C;
+    }
+    100% {
+    border: none;
+    }
+}
+@keyframes type2 {
+    0% {
+    width: 0;
+    }
+    1% {
+    opacity: 1;
+    }
+    99.9% {
+    border-right: .15em solid #64717C;
+    }
+    100% {
+    opacity: 1;
+    border: none;
+    }
+}
+@-webkit-keyframes type2 {
+    0% {
+    width: 0;
+    }
+    1% {
+    opacity: 1;
+    }
+    99.9% {
+    border-right: .15em solid #64717C;
+    }
+    100% {
+    opacity: 1;
+    border: none;
+    }
+}
+@keyframes type3 {
+    0% {
+    width: 0;
+    }
+    1% {
+    opacity: 1;
+    }
+    100% {
+    opacity: 1;
+    border-right: .15em solid #c0aa00;
+    }
+}
+@-webkit-keyframes type3 {
+    0% {
+    width: 0;
+    }
+    1% {
+    opacity: 1;
+    }
+    100% {
+    opacity: 1;
+    border-right: .15em solid #c0aa00;
+    }
+}
+@keyframes blink {
+    50% {
+    border-color: transparent;
+    }
+}
+@-webkit-keyframes blink {
+    50% {
+    border-color: tranparent;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+table th, td{
+    padding:8px;
+    text-align: center;
+}
+
+/* car.html */
+.car{
+margin:150px auto;
+border:5px solid #000A52;
+background-color: aliceblue;
+text-align: center;
+padding:30px;
+}
+.car h1{
+color:#000A52;
+}
+.car h5{
+color:rgb(217, 217, 217);
+}
+.car .section{
+display: grid !important;
+grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr!important;
+grid-template-columns: 1fr 1fr !important;
+grid-gap:10px 0px;
+padding:10px 150px;
+}
+.car label{
+margin:auto 0;
+padding:auto 0;
+}
+.car .section input::placeholder, textarea::placeholder{
+text-align: center;
+color:rgb(193, 201, 207) !important;
+font-weight: 600;
+}
+.car .section input, textarea, select, option{
+text-align: center;
+color:#464133 !important;
+font-weight: 600;
+}
+.car .title1{
+grid-row:1;
+grid-column:1;
+background-color: #000A52;
+color:white;
+padding:.375rem .75rem;
+font-weight: 700;
+border:2px solid #000A52;
+}
+.car .location{
+grid-row:1;
+grid-column:2;
+background-color: white;
+color:#464133;
+padding:.375rem .75rem;
+border:2px solid #000A52;
+}
+.car .title2{
+grid-row:2;
+grid-column:1;
+background-color: #000A52;
+color:white;
+padding:.375rem .75rem;
+font-weight: 700;
+border:2px solid #000A52;
+}
+.car .date{
+grid-row:2;
+grid-column:2;
+background-color: white;
+border:none;
+border:2px solid #000A52;
+color:#464133;
+}
+.car .title3{
+grid-row:3;
+grid-column:1;
+padding:.375rem .75rem;
+font-weight: 700;
+border:2px solid #000A52;
+background-color: #000A52;
+color:white;
+}
+.car .owner{
+grid-row:3;
+grid-column:2;
+background-color: white;
+border:none;
+border:2px solid #000A52;
+color:#464133;
+}
+.car .title4{
+grid-row:4;
+grid-column:1;
+padding:.375rem .75rem;
+font-weight: 700;
+border:2px solid #000A52;
+background-color: #000A52;
+color:white;
+}
+.car .company{
+grid-row:4;
+grid-column:2;
+background-color: white;
+border:none;
+border:2px solid #000A52;
+color:#464133;
+}
+.car .title5{
+grid-row:5;
+grid-column:1;
+background-color: #000A52;
+color:white;
+padding:.375rem .75rem;
+font-weight: 700;
+border:2px solid #000A52;
+}
+.car .plate{
+grid-row:5;
+grid-column:2;
+background-color: white;
+border:none;
+border:2px solid #000A52;
+color:#464133;
+}
+.car .title6{
+grid-row:6;
+grid-column:1;
+background-color: #000A52;
+color:white;
+padding:.375rem .75rem;
+font-weight: 700;
+border:2px solid #000A52;
+}
+.car .model{
+grid-row:6;
+grid-column:2;
+background-color: white;
+border:none;
+border:2px solid #000A52;
+color:#464133;
+}
+.car .title7{
+grid-row:7;
+grid-column:1;
+background-color: #000A52;
+color:white;
+padding:.375rem .75rem;
+font-weight: 700;
+border:2px solid #000A52;
+}
+.car .color{
+grid-row:7;
+grid-column:2;
+background-color: white;
+border:none;
+border:2px solid #000A52;
+color:#464133;
+}
+.car button{
+background-color:#464133;
+border:none;
+font-weight: 700;
+color:whitesmoke;
+border:none;
+}
+.car button:hover{
+background-color: #000A52;
+color:white;
+}
+
+
+/* car_list.html */
+.car_list table th, tr, td{
+border:1px solid grey !important;
+}
+
+.car_list table th{
+background-color:aliceblue;
+color:#000A52;
+}
+.car_list table td{
+background-color:white;
+color:#464133;
+}
+
+/* violator.html */
+.violator{
+    margin:200px auto;
+    border:5px solid #c0aa00;
+    background-color: #FFF5AD;
+    text-align: center;
+    padding:30px;
+}
+.violator h1{
+    color:#464133;
+}
+.violator h5{
+    color:grey;
+}
+.violator .section{
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:10px 0px;
+    padding:10px 150px;
+}
+label{
+    margin:auto 0;
+    padding:auto 0;
+}
+input, select{
+    text-align: center;
+}
+.violator .title1{
+    grid-row:1;
+    grid-column:1;
+    background-color: #464133;
+    color:whitesmoke;
+    padding:.375rem .75rem;
+    font-weight: 700;
+    border:2px solid #464133;
+}
+.violator .time{
+    grid-row:1;
+    grid-column:2;
+    background-color: #c0aa00;
+    color:whitesmoke;
+    padding:.375rem .75rem;
+    border:2px solid #464133;
+}
+.violator .title2{
+    grid-row:2;
+    grid-column:1;
+    background-color: #464133;
+    color:whitesmoke;
+    padding:.375rem .75rem;
+    font-weight: 700;
+    border:2px solid #464133;
+}
+.violator .lot{
+    grid-row:2;
+    grid-column:2;
+    background-color: white;
+    border:none;
+    border:2px solid #464133;
+}
+.violator option{
+    border:none;
+}
+.violator .title3{
+    grid-row:3;
+    grid-column:1;
+    background-color: #464133;
+    color:whitesmoke;
+    padding:.375rem .75rem;
+    font-weight: 700;
+    border:2px solid #464133;
+}
+.violator .plate{
+    grid-row:3;
+    grid-column:2;
+    background-color:white;
+    border:2px solid #464133;
+}
+.violator button{
+    background-color:#c0aa009d;
+    border:none;
+    font-weight: 700;
+    color:#464133;
+    border:2px solid #464133;
+}
+.violator button:hover{
+    background-color: #464133;
+    color:whitesmoke;
+    border:2px solid #c0aa00;
+}
+
+
+/* violator_list.html */
+.violator_list table th,td{
+    border:2px solid #c0aa00;
+}
+
+.violator_list table th{
+    background-color: #FFF5AD;
+    color:#464133;
+}
+.violator_list table td{
+    background-color:white;
+    color:#464133;
+}
+.violator_list button{
+    background-color:#c0aa009d;
+    border:none;
+    font-weight: 700;
+    color:#464133;
+    border:2px solid #464133;
+    border-radius: 5px;
+}
+.violator_list button:hover{
+    background-color: #464133;
+    color:whitesmoke;
+    border:2px solid #c0aa00;
+}
+
+/* employee.html */
+.employee{
+    margin:200px auto;
+    border:5px solid #c0aa00;
+    background-color: #000a52;
+    text-align: center;
+    padding:30px;
+}
+.employee h1{
+    color:#c0aa00;
+}
+.employee h5{
+    color:rgb(217, 217, 217);
+}
+.employee .section{
+    display: grid;
+    grid-template-rows:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:10px 0px;
+    padding:10px 150px;
+}
+label{
+    margin:auto 0;
+    padding:auto 0;
+}
+input, select{
+    text-align: center;
+}
+.employee .title1{
+    grid-row:1;
+    grid-column:1;
+    background-color: #B9BECC;
+    color:#464133;
+    padding:.375rem .75rem;
+    font-weight: 700;
+    border:2px solid #B9BECC;
+}
+.employee .name{
+    grid-row:1;
+    grid-column:2;
+    background-color: white;
+    color:#464133;
+    padding:.375rem .75rem;
+    border:2px solid #B9BECC;
+}
+.employee .title2{
+    grid-row:2;
+    grid-column:1;
+    background-color: #B9BECC;
+    color:464133;
+    padding:.375rem .75rem;
+    font-weight: 700;
+    border:2px solid #B9BECC;
+}
+.employee .date{
+    grid-row:2;
+    grid-column:2;
+    background-color: white;
+    border:none;
+    border:2px solid #B9BECC;
+    color:#464133;
+}
+
+.employee button{
+    background-color:#c0aa00;
+    border:none;
+    font-weight: 700;
+    color:whitesmoke;
+    border:2px solid #464133;
+}
+.employee button:hover{
+    background-color: #464133;
+    color:whitesmoke;
+    border:2px solid #c0aa00;
+}
+
+
+/* employee_list.html */
+.employee_list table th,td{
+    border:2px solid #c0aa00;
+}
+
+.employee_list table th{
+    background-color: #121D43;
+    color:#c0aa00;
+}
+.employee_list table td{
+    background-color:white;
+    color:#000A52;
+}
+.employee_list button{
+    background-color:#000A52;
+    border:none;
+    font-weight: 700;
+    color:#464133;
+    border:2px solid #464133;
+    border-radius: 5px;
+}
+.employee_list button:hover{
+    background-color: #464133;
+    color:whitesmoke;
+    border:2px solid #c0aa00;
+}
+

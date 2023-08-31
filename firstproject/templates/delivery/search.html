@@ -1,0 +1,63 @@
+{% extends 'delivery/delivery_base.html' %}
+
+{% block title %}Search Package{% endblock %}
+
+{% block container %}
+    <div class="search">
+        <input type="text" id="filterInput" placeholder="Search Your Package" oninput="filterTable()" required pattern="\S+.*" >
+        <table id="myTable">
+            <thead>
+              <tr>
+                <th>Tracking Number</th>
+                <th>Arriving Date</th>
+                <th>Receiver</th>
+                <th>Receiver Check</th>
+                <th>Security Check</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for item in item_list %}
+                    <tr>
+                        <td class="copyTracking"  onclick="copyText(this)">{{ item.code_data }} <button style="padding:1% !important;">Copy</button></td>
+                        <td>{{ item.arriving_at|date:"m/d/y h:i A" }}</td>
+                        <td>{{ item.receiver }}</td>
+
+                        {% if item.receiver_check %}
+                            <td>{{ item.receiver_at|date:"m/d/y h:i a" }}</td>
+                        {% else %}
+                            <td>
+                                {% if username == item.receiver %}
+                                    <center><a href="{% url 'Dsearchout_url' %}">Checkout</a></center>
+                                {% else %}
+                                    <center>-</center>
+                                {% endif %}
+                            </td>
+                        {% endif %}
+
+                        {% if item.admin_check %}
+                            <td>{{ item.admin_at|date:"m/d/y h:i a" }}</td>
+                        {% else %}
+                            <td>
+                                {% if user.is_superuser %}
+                                    <center><a href="{% url 'Dsearchout_url' %}">Checkout</a></center>
+                                {% else %}
+                                    <center>-</center>
+                                {% endif %}
+                            </td>
+                        {% endif %}
+
+                        {% if user.is_superuser %}
+                            <td><button class="delete">Edit</button></td>
+                            <td><button>Delete</button></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/copytext4.js' %}"></script>
+    <script src="{% static 'js/search.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'truck/truck_base.html' %}
+
+{% block container %}
+    <div class="checkin">
+        <h1>Truck Check-In Registration</h1>
+        <h5>Choose the parking lot and car plate number.</h5>
+        <form method="post" action="{% url 'Ttruckin_url' %}">
+            {% csrf_token %}
+            <div class="section">
+                <label class="title1">Check-In Time</label>
+                <label class="time" id="current-time"></label>
+                <label class="title2">Check-In Manager</label>
+                <label class="admin">{{user.username}}</label>
+                <label class="title3">Driver Name</label>
+                <input type="text" class="drivername" name="drivername" placeholder="John Smith">
+                <label class="title4">License Plate</label>
+                <input type="text" class="plate" name="plate" placeholder="AGH1136">
+                <label class="title5">Company</label>
+                <input type="text" class="company" name="company" placeholder="ABC Express">
+                <label class="title6">Truck Number</label>
+                <input type="text" class="trucknumber" name="trucknumber" placeholder="123456">
+                <label class="title7">Direct Delivery CNTR</label>
+                <input type="text" class="cntr" name="cntr" placeholder="ABCD1234567">
+                <label class="title8">Trailer Number</label>
+                <input type="text" class="trailer" name="trailer" placeholder="ABCD1234567">
+                <label class="title9">Seal Number</label>
+                <input type="text" class="seal" name="seal" placeholder="ABCD123456">
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    {% load static %}
+    <script src="{% static 'js/current_time.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'delivery/delivery_base.html' %}
+
+{% block title %}Shipping Center{% endblock %}
+
+{% block container %}
+    {% if user.is_superuser %}
+        <div class="add">
+            <h1 style="font-weight: 700;">Tracking Number is</h1>
+            <br/>
+            <div class="add-scan">
+                <h1><a class="add-scan" href="{% url 'Daddscan_url' %}">Exist</a></h1>
+            </div>
+            <h1>
+                <a class="add-gen" href="{% url 'Daddgen_url' %}"> No Exist</a>
+            </h1>
+        </div>
+    {% endif %}
+{% endblock %}

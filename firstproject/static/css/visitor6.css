@@ -1,0 +1,422 @@
+/* visitor_base.html */
+.visitor{
+  z-index:1;
+  position: relative;
+  padding:0;
+  height: 100%;
+}
+.visitor::before{
+  content:"";
+  background-size: cover;
+  background-image: url('../../static/image/MainLot1.jpg');
+  filter:blur(3px);
+  position:fixed;
+  z-index:-1;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+}
+nav{
+  border-bottom:2px solid #E5255E !important;
+  background-color: white;
+}
+nav form a{
+  color: #1b1b1b !important;
+  margin:0 20px 0 30px; 
+  border:1px solid white; 
+  border-radius: 5px; 
+  padding:5px
+}
+nav h5{
+  text-transform: capitalize;
+  color: #1b1b1b !important;
+  margin:0
+}
+
+/* visitor_home.html */
+.content{
+  margin:80px auto;
+}
+
+.content p {
+  font-size:40px;
+  font-weight: 700;
+  border-right: .15em solid #67686B;
+  white-space: nowrap;
+  overflow: hidden;
+  color:#67686B;
+  background-color: white;
+}
+
+.content p a{
+  color:#F26282;
+}
+
+.content p:nth-child(1) {
+  width: 28.5em;
+  -webkit-animation: type 3s steps(40, end);
+  animation: type 3s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.content p:nth-child(2) {
+  width: 26em;
+  opacity: 0;
+  -webkit-animation: type2 3s steps(40, end);
+  animation: type2 3s steps(40, end);
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.content p:nth-child(3) {
+  width: 24.5em;
+  opacity: 0;
+  -webkit-animation: type2 3s steps(40, end);
+  animation: type2 3s steps(40, end);
+  -webkit-animation-delay: 3s;
+  animation-delay: 6s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.content p:nth-child(4) {
+  width: 8em;
+  opacity: 0;
+  -webkit-animation: type3 3s steps(40, end);
+  animation: type3 3s steps(40, end);
+  -webkit-animation-delay: 3s;
+  animation-delay: 9s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  border-right: .15em solid #F26282;
+}
+.content p:nth-child(5) {
+  width: 7em;
+  opacity: 0;
+  -webkit-animation: type3 3s steps(40, end);
+  animation: type3 3s steps(40, end);
+  -webkit-animation-delay: 3s;
+  animation-delay: 12s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  border-right: .15em solid #F26282;
+}
+.content p:nth-child(6) {
+  width: 6em;
+  opacity: 0;
+  -webkit-animation: type3 3s steps(40, end);
+  animation: type3 3s steps(40, end);
+  -webkit-animation-delay: 3s;
+  animation-delay: 15s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  border-right: .15em solid #F26282;
+}
+
+@keyframes type {
+  0% {
+      width: 0;
+  }
+  99.9% {
+      border-right: .15em solid #64717C;
+  }
+  100% {
+      border: none;
+  }
+}
+@-webkit-keyframes type {
+  0% {
+      width: 0;
+  }
+  99.9% {
+      border-right: .15em solid #64717C;
+  }
+  100% {
+      border: none;
+  }
+}
+@keyframes type2 {
+  0% {
+      width: 0;
+  }
+  1% {
+      opacity: 1;
+  }
+  99.9% {
+      border-right: .15em solid #64717C;
+  }
+  100% {
+      opacity: 1;
+      border: none;
+  }
+}
+@-webkit-keyframes type2 {
+  0% {
+      width: 0;
+  }
+  1% {
+      opacity: 1;
+  }
+  99.9% {
+      border-right: .15em solid #64717C;
+  }
+  100% {
+      opacity: 1;
+      border: none;
+  }
+}
+@keyframes type3 {
+  0% {
+      width: 0;
+  }
+  1% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 1;
+      border-right: .15em solid #F26282;
+  }
+}
+@-webkit-keyframes type3 {
+  0% {
+      width: 0;
+  }
+  1% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 1;
+      border-right: .15em solid #F26282;
+  }
+}
+@keyframes blink {
+  50% {
+      border-color: transparent;
+  }
+  }
+  @-webkit-keyframes blink {
+  50% {
+      border-color: tranparent;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table th, td{
+  padding:8px;
+  text-align: center;
+}
+
+/* resgister.html */
+.register{
+  margin:80px auto;
+  border:5px solid #E5255E;
+  background-color: #F2F2F2;
+  text-align: center;
+  padding:30px;
+}
+.register h1{
+  color:#464133;
+}
+.register h5{
+  color:grey;
+}
+.register h5 a{
+  color:#F26282;
+}
+.register .section{
+  display: grid;
+  grid-template-rows:1fr 1fr 1fr 1.5fr 1fr 1fr 1.5fr; 
+  grid-template-columns: 1fr 1fr;
+  grid-gap:10px 0px;
+  padding:10px 150px;
+}
+.register .section label{
+  margin:auto 0;
+  padding:auto 0;
+}
+.register .section input::placeholder{
+  text-align: center;
+  color:#4641336b !important;
+  font-weight: 600;
+  text-align: center !important;
+}
+.register .section textarea::placeholder{
+  text-align: center;
+  color:#4641336b !important;
+  font-weight: 600;
+}
+.register .section input, .register .section textarea, .register .section select, .register .section option{
+  color:#E5255E !important;
+  font-weight: 600;
+  text-align: center;
+}
+.register .section  .title1{
+  grid-row:1;
+  grid-column:1;
+  background-color: #464133;
+  color:whitesmoke;
+  font-weight: 700;
+  border:2px solid #464133;
+  padding: 0.35rem 0.7rem;
+}
+.register .section  .name{
+  grid-row:1;
+  grid-column:2;
+  background-color: white;
+  border:2px solid #464133;
+}
+.register .section  .title2{
+  grid-row:2;
+  grid-column:1;
+  background-color: #464133;
+  color:whitesmoke;
+  font-weight: 700;
+  border:2px solid #464133;
+  padding: 0.35rem 0.7rem;
+}
+.register .section .company{
+  grid-row:2;
+  grid-column:2;
+  background-color: white;
+  border:2px solid #464133;
+}
+.register .section .title3{
+  grid-row:3;
+  grid-column:1;
+  background-color: #464133;
+  color:whitesmoke;
+  font-weight: 700;
+  border:2px solid #464133;
+  padding: 0.35rem 0.7rem;
+}
+.register .section .date{
+  grid-row:3;
+  grid-column:2;
+  background-color:white;
+  border:2px solid #464133;
+}
+.register .section .title4{
+  grid-row:4;
+  grid-column:1;
+  background-color: #464133;
+  color:whitesmoke;
+  font-weight: 700;
+  border:2px solid #464133;
+  padding: 1rem 0.7rem;
+}
+.register .section .purpose{
+  grid-row:4;
+  grid-column:2;
+  background-color:white;
+  border:2px solid #464133;
+}
+.register .section .title5{
+  grid-row:5;
+  grid-column:1;
+  background-color: #464133;
+  color:whitesmoke;
+  font-weight: 700;
+  border:2px solid #464133;
+  padding: 0.35rem 0.7rem;
+}
+.register .section .laptop{
+  grid-row:5;
+  grid-column:2;
+  background-color:white;
+  border:2px solid #464133;
+}
+.register .section .title6{
+  grid-row:6;
+  grid-column:1;
+  background-color: #464133;
+  color:whitesmoke;
+  font-weight: 700;
+  border:2px solid #464133;
+  padding: 0.35rem 0.7rem;
+}
+.register .section .pic{
+  grid-row:6;
+  grid-column:2;
+  background-color:white;
+  border:2px solid #464133;
+}
+.register .section .title7{
+  grid-row:7;
+  grid-column:1;
+  background-color: #464133;
+  color:whitesmoke;
+  font-weight: 700;
+  border:2px solid #464133;
+  padding: 1rem 0.7rem;
+}
+.register .section .remark{
+  grid-row:7;
+  grid-column:2;
+  background-color:white;
+  border:2px solid #464133;
+}
+.register button{
+  border:none;
+  font-weight: 700;
+  color:whitesmoke;
+  background-color: #E5255E;
+}
+.register button:hover{
+  background-color: #464133;
+  color:whitesmoke;
+  border:2px solid white;
+}
+
+/* myapproval.html */
+.my_list table{
+  background-color: white;
+}
+.visitomy_listr_list button{
+  border-radius: 5px;
+}
+
+/* visitorlist.html */
+.visitor_list table{
+  background-color: white;
+}
+.visitor_list button{
+  border-radius: 5px;
+}
+
+/* parkingpass.html */
+.parkingpass button{
+  border-radius: 5px !important;
+  margin: 10px;
+}
+.parkingpass span{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom:0;
+}
+.parkingform h1{
+  font-size:6rem;
+  text-align: center;
+}
+.parkingform{ 
+  margin-top: 30px !important;
+  border: 3px dashed black !important;
+  background-color: white !important;
+}
+.parkingform img{
+  margin:20px;
+}
+.parkingform h2{
+  text-align: center !important;
+}
+.parkingform h5{
+  text-align: right;
+  margin-top:100px;
+  margin-right:30px;
+  margin-bottom:20px;
+}
+
+

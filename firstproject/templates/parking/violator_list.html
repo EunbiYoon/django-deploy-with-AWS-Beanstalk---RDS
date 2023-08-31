@@ -1,0 +1,45 @@
+{% extends 'parking/parking_base.html' %}
+
+{% block list %}
+  <div class="violator_list">
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Car Plate</th>
+          <th>Parking Date</th>
+          <th>Parking Location</th>
+          <th>Violate Count</th>
+          <th>Ticket</th>
+          {% if user.is_superuser %}
+          <th>Delete</th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody>
+          {% for violator in violator_list %}
+            <tr>
+                <td style="font-weight: 700;">{{ violator.car_plate }}</td>
+                <td>{{ violator.parking_at|date:"m/d/y h:i:s a" }}</td>
+                <td>{{ violator.parking_lot }}</td>
+                <td>{{ violator.violate_count }}</td>
+                <td>
+                  <form method="post" action="{% url 'Pviolator_delete_url' violator.id %}">
+                    {% csrf_token %}
+                    <button type="submit">Ticket</button>
+                  </form>
+                </td>
+                {% if user.is_superuser %}
+                <td>
+                  <form method="post" action="{% url 'Pviolator_delete_url' violator.id %}">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                  </form>
+                </td>
+                {% endif %}
+
+            </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

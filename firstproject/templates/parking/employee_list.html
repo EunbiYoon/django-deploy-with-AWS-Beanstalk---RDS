@@ -1,0 +1,26 @@
+{% extends 'parking/parking_base.html' %}
+
+{% block list %}
+  <div class="employee_list">
+    <table>
+      <thead>
+        <tr>
+          <th>Employee</th>
+          <th>Register At</th>
+          <th>Start At</th>
+          <th>End At</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for employee in employee_list %}
+            <tr>
+                <td>{{ employee.employee_name }}</td>
+                <td>{{ employee.register_at|date:"m/d/Y h:i a" }}</td>
+                <td>{{ employee.start_date|date:"m/d/Y" }}</td>
+                <td>{{ employee.end_date|date:"m/d/Y" }}</td>
+            </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'delivery/delivery_base.html' %}
+
+
+{% block container %}
+<div class="content">
+  <p>
+    Hello, I'm delivery chatbot, your virtual assistant.
+  </p>
+  <p>
+    What can I do to assist you about delivery package?
+  </p>
+  {% if user.is_superuser %}
+  <p style="color:white;background-color: white;">What can I do to assist you about delivery package?</p>
+  <p>
+    <a href="{% url 'Dadd_url' %}">Add New Package</a>
+  </p>
+  {% endif %}
+  <p>
+    <a href="{% url 'Dsearch_url' %}">Search Your Package</a>
+  </p>
+  <p>
+    <a href="{% url 'Ddeliverycheckout_url' %}">Checkout Your Package</a>
+  </p>
+</div>
+{% endblock %}

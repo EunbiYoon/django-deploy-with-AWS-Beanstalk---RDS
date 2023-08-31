@@ -1,0 +1,24 @@
+{% extends 'truck/truck_base.html' %}
+
+{% block container %}
+<div class="content">
+  <p>
+    Hello, I'm truck tracking chatbot, your virtual assistant.
+  </p>
+  <p>
+    What can I do to assist you about truck tracking?
+  </p>
+  {% if user.is_superuser %}
+  <p>What can I do to assist you about delivery package?</p>
+  <p>
+    <a href="{% url 'Ttruckin_url' %}">Truck Check-In</a>
+  </p>
+  <p>
+    <a href="{% url 'Ttruckout_url' %}">Truck Check-Out</a>
+  </p>
+  {% endif %}
+  <p>
+    <a href="{% url 'Ttruckhistory_url' %}">Review History</a>
+  </p>
+</div>
+{% endblock %}

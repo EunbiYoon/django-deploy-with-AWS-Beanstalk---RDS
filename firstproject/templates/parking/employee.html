@@ -1,0 +1,29 @@
+{% extends 'parking/parking_base.html' %}
+
+{% block container %}
+    <div class="employee">
+        <h1>Register Employee Of Month</h1>
+        <h5>Choose the parking lot and car plate number.</h5>
+        <form method="post" action="{% url 'Pemployee_url' %}">
+            {% csrf_token %}
+            <div class="section">
+                <label class="title1">Employee Name</label>
+                <input type="text" class="name" name="name" placeholder="John Smith">
+                <label class="title2">Date</label>
+                <input type="text" id="date-range-picker" placeholder="Select a date range" class="date" name="date">
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/current_time.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Initialize flatpickr
+        flatpickr("#date-range-picker", {
+          mode:'range',
+          dateFormat: "Y-m-d", // You can change the format as per your needs
+        });
+    </script> 
+{% endblock %}

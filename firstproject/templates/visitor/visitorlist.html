@@ -1,0 +1,135 @@
+{% extends 'visitor/visitor_base.html' %}
+
+{% block list %}
+  <div class="visitor_list">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <table class="table table-striped" id="dataTable">
+      <thead>
+        <tr>
+          <th colspan="11">User Request</th>
+          <th rowspan="2">Status</th>
+          <th colspan="4">Security Admin Check</th>
+          {% if user.is_superuser %}
+            <th rowspan="2">Delete</th>
+          {% endif %}
+        </tr>
+        <tr>
+          <th>Visitor ID</th>
+          <th>Visitor Name</th>
+          <th>Visitor Company</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Visitor Purpose</th>
+          <th>Bring Laptop</th>
+          <th>Visitor PIC</th>
+          <th>Remark</th>
+          <th>Request By</th>
+          <th>Request At</th>
+          <th>Security Approval</th>
+          <th>Parking Pass</th>
+          <th>Security In</th>
+          <th>Security Out</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for visitor in visitor_list %}
+            <tr>
+              <td>{{ visitor.id }}</td>
+              <td>{{ visitor.visitor_name }}</td>
+              <td>{{ visitor.visitor_company }}</td>
+              <td>{{ visitor.start_date|date:"m/d/y" }}</td>
+              <td>{{ visitor.end_date|date:"m/d/y" }}</td>
+              <td>{{ visitor.visitor_purpose }}</td>
+              <td>{{ visitor.bring_laptop }}</td>
+              <td>{{ visitor.pic }}</td>
+
+              {% if visitor.remark %}
+              <td>
+                <form method="post" action="{% url 'Vlisttoggle_url' visitor.id %}">
+                  {% csrf_token %}
+                    {% if visitor.show_remark %}
+                      <button class="btn btn-dark" type="submit">Hide</button>  
+                      {{ visitor.remark }}
+                    {% else %}
+                      <button class="btn btn-dark">View</button>
+                    {% endif %}
+                </form>
+              </td>
+              {% else %}
+              <td>-</td>
+              {% endif %}
+              <td>{{ visitor.user.first_name }} {{ visitor.user.last_name }}</td>
+              <td>{{ visitor.register_at|date:"m/d/y h:i A" }}</td>
+              
+              {% if user.is_superuser %}
+                <form method="post" action="{% url 'Vlistapproval_url' visitor.id %}">
+                  {% csrf_token %}
+                  {% if visitor.security_approval %}
+                    <td>Approved</td>
+                    <td>{{ visitor.security_approval|date:"m/d/y h:i A" }}</td>
+                  {% else %}
+                    {% if visitor.reject_request %}
+                      <td style="background-color: transparent; color:white">Rejected</td>
+                    {% else %}
+                      <td>Requested</td>
+                      <td>
+                        <button class="btn btn-dark" type="submit">Check</button>
+                      </td>
+                    {% endif %}
+                  {% endif %}
+                </form>
+                
+                {% if visitor.security_approval %}
+                  <form method="post" action="{% url 'Vparkingpass_url' visitor.id %}">
+                    {% csrf_token %}
+                      <td><button class="btn btn-dark" type="submit">Pass</button></td>
+                  </form>
+
+                  {% if visitor.check_in %}
+                    <td>{{ visitor.check_in|date:"m/d/y h:i A" }}</td>
+                  {% else %}
+                    <form method="post" action="{% url 'Vcheckin_url' visitor.id %}">
+                      {% csrf_token %}
+                        <td><button class="btn btn-dark" type="submit">In</button></td>
+                    </form>
+                  {% endif %}
+
+                  {% if visitor.check_out %}
+                    <td>{{ visitor.check_out|date:"m/d/y h:i A" }}</td>
+                  {% else %}
+                    <form method="post" action="{% url 'Vcheckout_url' visitor.id %}">
+                      {% csrf_token %}
+                        <td><button class="btn btn-dark" type="submit">Out</button></td>
+                    </form>
+                  {% endif %}
+
+                {% else %}
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                {% endif %}
+
+              {% else %}
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              {% endif %}
+              <td>
+                <form method="post" action="{% url 'Vlistdelete_url' visitor.id %}">
+                  {% csrf_token %}
+                  <button class="btn btn-dark" type="submit">X</button>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+    <div id="pagination"></div>
+  </div>
+  {% load static %}
+  <script src="{% static 'js/table.js' %}"></script>
+{% endblock %}

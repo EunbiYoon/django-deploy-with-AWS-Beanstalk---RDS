@@ -1,0 +1,62 @@
+{% extends 'truck/truck_base.html' %}
+
+{% block list %}
+    <div class="history" id="tableContainer">
+        <input type="text" id="filterInput" placeholder="Search Your Package" oninput="filterTable()" required pattern="\S+.*" >
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th style="font-size: 1.1rem; color:#A72B2A" colspan="9">Check-In</th>
+                    <th style="font-size: 1.1rem; color:#286060; background-color: #58d5d52d;" colspan="4">Check-Out</th>
+                </tr>
+                <tr>
+                    <th>License Plate</th>
+                    <th>Truck Number</th>
+                    <th>Driver Name</th>
+                    <th>Company</th>
+                    <th>Direct Delivery CNTR</th>
+                    <th>Trailer Number</th>
+                    <th>Seal Number</th>
+                    <th>Check-In Time</th>
+                    <th>Check-In Manager</th>
+                    <th style="color:#286060; background-color: #58d5d52d;">Out Trailer Number/Bobtail</th>
+                    <th style="color:#286060; background-color: #58d5d52d;">Loading Status</th>
+                    <th style="color:#286060; background-color: #58d5d52d;">Check-Out Time</th>
+                    <th style="color:#286060; background-color: #58d5d52d;">Check-Out Manager</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for truck in truck_list %}
+                    <tr>
+                        <td>{{ truck.license_plate }}</td>
+                        <td>{{ truck.truck_number }}</td>
+                        <td>{{ truck.driver_name }}</td>
+                        <td>{{ truck.company_name }}</td>
+                        <td>{{ truck.direct_cntr }}</td>
+                        <td>{{ truck.in_trailer }}</td>
+                        <td>{{ truck.seal_number }}</td>
+                        <td>{{ truck.checkin_at|date:"m/d/y h:i A" }}</td>
+                        <td>{{ truck.checkin_manager }}</td>
+                        {% if truck.out_trailer %}
+                            <td>{{ truck.out_trailer }}</td>
+                            <td>{{ truck.load_status }}</td>
+                            <td>{{ truck.checkout_at }}</td>
+                            <td>{{ truck.checkout_manager }}</td>
+                        {% else %}
+                            <td><button>Checkout</button></td>
+                            <td><button>Edit</button></td>
+                            <td><button>Delete</button></td>
+                            <td><center>-</center></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+  
+  
+    
+    {% load static %}
+    <script src="{% static 'js/search.js' %}"></script>
+{% endblock %}

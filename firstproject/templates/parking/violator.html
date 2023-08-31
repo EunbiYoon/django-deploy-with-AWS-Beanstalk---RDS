@@ -1,0 +1,27 @@
+{% extends 'parking/parking_base.html' %}
+
+{% block container %}
+    <div class="violator">
+        <h1>Violator Parking Registration</h1>
+        <h5>Choose the parking lot and car plate number.</h5>
+        <form method="post" action="{% url 'Pviolator_url' %}">
+            {% csrf_token %}
+            <div class="section">
+                <label class="title1">Current Time</label>
+                <label class="time" id="current-time"></label>
+                <label class="title2">Parking Lot</label>
+                <select class="lot" name="location">
+                    <option value="visitor_lot">Vistior Parking Lot</option>
+                    <option value="in_lg_lot">VIP Parking Lot</option>
+                    <option value="2nd parking">2nd Parking Lot</option>
+                </select>
+                <label class="title3">Car Plate Number</label>
+                <input type="text" class="plate" name="plate">
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    {% load static %}
+    <script src="{% static 'js/current_time.js' %}"></script>
+{% endblock %}

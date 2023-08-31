@@ -1,0 +1,48 @@
+{% extends 'visitor/visitor_base.html' %}
+
+{% block container %}
+    <div class="register">
+        <h1>Visitor Request</h1>
+        <h5>
+            All blanks required except remark. Check your request. <a href="{% url 'Vmyapproval_url' %}">@My Approval</a></h5>
+        <form method="post" action="{% url 'Vregister_url' %}">
+            {% csrf_token %}
+            <div class="section">
+                <label class="title1">* Visitor's Name</label>
+                <input type="text" placeholder="John Smith" class="name" name="name">
+
+                <label class="title2">* Visitor's Company</label>
+                <input type="text" placeholder="Pantos" class="company" name="company">
+
+                <label class="title3">* Duration Stay</label>
+                <input type="text" class="date" id="date-range-picker" placeholder="Select a date range" class="visitor_input" name="date">
+                
+                <label class="title4">* Visit Purpose</label>
+                <textarea name="purpose" placeholder="Site Visit, Corporate and Support Project or Task, Negotiate Terms or Contract, and Etc." class="purpose"></textarea>
+
+                <label class="title5">* Bring Laptop Onsite</label>
+                <select class="laptop" name="laptop" class="visitor_input" style="text-align: center!important">
+                    <option style="text-align:center" value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label class="title6">* Visitor's PIC</label>
+                <input type="text" placeholder="Christina Lee" class="pic" name="pic">
+
+                <label class="title7">Remark</label>
+                <textarea name="remark" placeholder="Please contact to Christina Lee (931-111-1111) when visitor arrived to the security gate." class="remark"></textarea>
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Request</button>
+        </form>
+    </div>
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> 
+<script>
+    // Initialize flatpickr
+    flatpickr("#date-range-picker", {
+      mode:'range',
+      dateFormat: "Y-m-d", // You can change the format as per your needs
+    });
+</script> 
+{% endblock %}
